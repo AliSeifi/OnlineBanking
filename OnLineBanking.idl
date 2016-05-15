@@ -1,0 +1,19 @@
+// Banking.idl
+module onLineBanking {
+
+    struct onLineDetails {
+    	string CustomerName;
+    	string CustomerAddress;
+    	string UniqueID;
+    	long BankACNumber;
+    	long Balance;
+    };
+    
+
+
+    interface OnLineBanking {
+
+	void registerOnLineBanking(in any anyOnLineDetails, out string password);
+	void performOnLineTransaction(in string UniqueID, in long amount, out any anyOnLineDetails) ;
+    };
+};
